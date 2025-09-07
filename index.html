@@ -171,6 +171,11 @@
         {
             document.getElementById("IMGCNG").src = "./IMG/BW.Logo.png";
         }
+
+        function ButtonChange(element) 
+        {
+            element.innerHTML = "BMW";
+        }
         </script>
 
     </head>
@@ -333,6 +338,8 @@
         </div>
 
         <div>
+            <button onclick="ButtonChange(this)"> What's The Best Car Manufacturer </button>
+            
             <button onclick="ChangeIMG()">Click To Chnage The Logo</button>
 
             <img id="IMGCNG" src="./IMG/BB.Logo.jpg">
