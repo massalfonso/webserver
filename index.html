@@ -176,6 +176,17 @@
         {
             element.innerHTML = "BMW";
         }
+
+        function RequiredField() 
+        {
+            const input = document.getElementById("NAME");
+
+            if (input.value.trim() === "") 
+            {
+                alert("This Field Is Required");
+                input.focus();
+            }
+        }
         </script>
 
     </head>
@@ -192,6 +203,15 @@
         </div>
 
         <div>
+            <h3>
+                Enter Your Name:
+            </h3>
+
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="NAME" onblur="RequiredField()" required>
+            </form>
+
             <h3>
                 Enter Your Car's Information
             </h3>
@@ -339,7 +359,7 @@
 
         <div>
             <button onclick="ButtonChange(this)"> What's The Best Car Manufacturer </button>
-            
+
             <button onclick="ChangeIMG()">Click To Chnage The Logo</button>
 
             <img id="IMGCNG" src="./IMG/BB.Logo.jpg">
