@@ -158,15 +158,19 @@
 
         <script>
         function ShowBuildUpdate() 
-            {
+        {
                 alert("Discovered the hard way that the new AEM fuel pump we bought has too high of a flow and will cause issues with the slower OEM fuel filter, now were going to need to find a fuel pump with a smaller LPH (Litres Per Hour) rating or also upgrade the fuel filter");
-            }
+        }
 
         function ChangeText()
-            {
+        {
                 document.getElementById("Change").innerHTML = "Then you are on the wrong page BOZO";
-            }
+        }
 
+        function ChangeIMG() 
+        {
+            document.getElementById("IMGCNG").src = "./IMG/BW.Logo.png";
+        }
         </script>
 
     </head>
@@ -326,6 +330,12 @@
                 <input type="email" id="email" name="email" required placeholder="your@email.com">
                 <input type="submit" value="Submit">
             </form>
+        </div>
+
+        <div>
+            <button onclick="ChangeIMG()">Click To Chnage The Logo</button>
+
+            <img id="IMGCNG" src="./IMG/BB.Logo.jpg">
         </div>
         
     </body>
