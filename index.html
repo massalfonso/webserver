@@ -187,8 +187,15 @@
                 input.focus();
             }
         }
-        </script>
 
+        async function getText(file) 
+        {
+            let myObject = await fetch(file);
+            let myText = await myObject.text();
+            document.getElementById("AsyncFetchTest").innerHTML = myText;
+        }
+
+        </script>
     </head>
 
     <body>
@@ -197,6 +204,12 @@
         </h1>
 
         <img src="IMG/E46.Picture.jpg"/>
+
+        <div>
+            <p id="AsyncFetchTest"></p>
+            
+            <button onclick="getText('FetchTest.txt')">Load Text</button>
+        </div>
 
         <div>
             <button onclick="ShowBuildUpdate()"> Latest Build Updates </button>
