@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Document</title>
+    <title>Response</title>
 </head>
 <body>
-    <p>
-        Your E46's Year: <?= htmlspecialchars($_POST['year']) . " " . htmlspecialchars($_POST['lastname'])?>
-    </p>
-
-    <p>
-        Your E46 Model: <?= htmlspecialchars($_POST['models']) ?>
-    </p>
+    <?php
+    if (isset($_POST['year'])) 
+    {
+        echo "<p>Your E46's Year: " . htmlspecialchars($_POST['year']) . "</p>";
+    }
+    
+    if (isset($_POST['models'])) 
+    {
+        echo "<p>Your E46 Model: " . htmlspecialchars($_POST['models']) . "</p>";
+    }
+    ?>
 </body>
 </html>
