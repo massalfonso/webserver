@@ -10,7 +10,7 @@
         echo "<p>Your E46's Year: " . htmlspecialchars($_POST['year']) . "</p>";
     }
     
-    if (isset($_POST['models'])) 
+    else if (isset($_POST['models'])) 
     {
         echo "<p>Your E46 Model: " . htmlspecialchars($_POST['models']) . "</p>";
     }
