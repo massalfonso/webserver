@@ -207,10 +207,12 @@
                 Enter Your Car's Year:
             </p>
             <form action="response.php" method="get">
-                <input type="number" required min="1900" max="2025" placeholder="Year">
+                <input type="number" name="year" required min="1900" max="2025" placeholder="Year">
                 <input type="submit" value="Submit">
             </form>
+        </div>
 
+        <div>
             <button onclick="ChangeText()"> Press If Your Car Isn't Displayed Below </button>
 
             <p id ="Change">

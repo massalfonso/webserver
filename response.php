@@ -5,11 +5,11 @@
 </head>
 <body>
     <p>
-        GET: <?php var_dump($_GET); ?>
+        Your E46's Year: <?= htmlspecialchars($_POST['year']) . " " . htmlspecialchars($_POST['lastname'])?>
     </p>
-    
+
     <p>
-        POST: <?php var_dump($_POST); ?>
+        Your E46 Model: <?= htmlspecialchars($_POST['models']) ?>
     </p>
 </body>
 </html>
