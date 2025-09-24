@@ -158,44 +158,34 @@
 
         <script>
         function ShowBuildUpdate() 
-        {
+            {
                 alert("Discovered the hard way that the new AEM fuel pump we bought has too high of a flow and will cause issues with the slower OEM fuel filter, now were going to need to find a fuel pump with a smaller LPH (Litres Per Hour) rating or also upgrade the fuel filter");
-        }
+            }
 
         function ChangeText()
-        {
-                document.getElementById("Change").innerHTML = "Then you are on the wrong page BOZO";
-        }
-
-        function ChangeIMG() 
-        {
-            document.getElementById("IMGCNG").src = "./IMG/BW.Logo.png";
-        }
-
-        function ButtonChange(element) 
-        {
-            element.innerHTML = "BMW";
-        }
-
-        function RequiredField() 
-        {
-            const input = document.getElementById("NAME");
-
-            if (input.value.trim() === "") 
             {
-                alert("This Field Is Required");
-                input.focus();
+                document.getElementById("Change").innerHTML = "Then you are on the wrong page BOZO";
+            }
+        
+        function Hide() 
+        {
+            var x = document.getElementById("hidden");
+         if (x.style.display === "none") 
+            {
+                x.style.display = "block";
+            } 
+        else 
+            {
+                x.style.display = "none";
             }
         }
 
-        async function getText(file) 
+        function IMGChange() 
         {
-            let myObject = await fetch(file);
-            let myText = await myObject.text();
-            document.getElementById("AsyncFetchTest").innerHTML = myText;
+            document.getElementById("IMG1").src = "IMG/BW.Logo.png";
         }
-
         </script>
+
     </head>
 
     <body>
@@ -206,25 +196,10 @@
         <img src="IMG/E46.Picture.jpg"/>
 
         <div>
-            <p id="AsyncFetchTest"></p>
-            
-            <button onclick="getText('FetchTest.txt')">Load Text</button>
-        </div>
-
-        <div>
             <button onclick="ShowBuildUpdate()"> Latest Build Updates </button>
         </div>
 
         <div>
-            <h3>
-                Enter Your Name:
-            </h3>
-
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="NAME" onblur="RequiredField()" required>
-            </form>
-
             <h3>
                 Enter Your Car's Information
             </h3>
@@ -238,8 +213,7 @@
 
             <button onclick="ChangeText()"> Press If Your Car Isn't Displayed Below </button>
 
-            <p>
-                id="Change"
+            <p id ="Change">
                 Select Your Car Model:
             </p>
             <form>
@@ -264,6 +238,10 @@
                 <br>
                 <input type="submit" value="Submit">
             </form>
+        </div>
+
+        <div>
+            <form action="response.php" method="get"></form>
         </div>
 
         <div>
@@ -301,7 +279,9 @@
             </p>
         </div>
 
-        <div>
+        <button onclick="Hide()">Click To Hide The Tools List</button>
+
+        <div id = hidden>
             <h2>
                 Required Tools:
             </h2>
@@ -369,14 +349,11 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-
-        <div>
-            <button onclick="ButtonChange(this)"> What's The Best Car Manufacturer </button>
-
-            <button onclick="ChangeIMG()">Click To Chnage The Logo</button>
-
-            <img id="IMGCNG" src="./IMG/BB.Logo.jpg">
-        </div>
         
+        <div>
+        <button onclick="IMGChange()">Click For Logo Change</button>
+
+        <img id=IMG1 src="IMG/BB.Logo.jpg"/>
+        </div>
     </body>
 </html>
