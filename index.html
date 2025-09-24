@@ -199,7 +199,7 @@
             <button onclick="ShowBuildUpdate()"> Latest Build Updates </button>
         </div>
 
-        <div>
+        <>
             <h3>
                 Enter Your Car's Information
             </h3>
@@ -208,11 +208,8 @@
             </p>
             <form action="response.php" method="post">
                 <input type="number" name="year" required min="1900" max="2025" placeholder="Year">
-                <input type="submit" value="Submit">
             </form>
-        </div>
-
-        <div>
+        
             <button onclick="ChangeText()"> Press If Your Car Isn't Displayed Below </button>
 
             <p id ="Change">
