@@ -23,7 +23,7 @@
 <body>
     <p>My Cars Year Is: <?= htmlspecialchars($_GET['year']) . " and Its Model Is: " . htmlspecialchars($_GET['models'])?></p>
     <?php
-        /*if (isset($_POST['year'])) 
+        if (isset($_POST['year'])) 
         {
             echo "<p>Your E46's Year: " . htmlspecialchars($_POST['year']) . "</p>";
         }
@@ -31,7 +31,7 @@
         if (isset($_POST['models'])) 
         {
             echo "<p>Your E46 Model: " . htmlspecialchars($_POST['models']) . "</p>";
-        }*/
+        }
 
         $sql = $sql = "select temp from teaFlavor where temp=75;";
         $result = mysqli_query($conn, $sql);
