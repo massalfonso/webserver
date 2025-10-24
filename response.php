@@ -33,20 +33,20 @@
             echo "<p>Your E46 Model: " . htmlspecialchars($_POST['models']) . "</p>";
         }
 
-        $sql = $sql = "select temp from teaFlavor where temp=75;";
+        $sql = $sql = "select year from CarInfo where year=2005;";
         $result = mysqli_query($conn, $sql);
-        echo "<h3>The correct temperatures</h3>";
+        echo "<h3>Who Selected The Last Production Year</h3>";
             foreach($result as $row) 
             {
-                echo "<p>{$row['temp']}</p>\n";
+                echo "<p>{$row['year']}</p>\n";
             }
                 
-        $sql = $sql = "select distinct thick from teaFlavor;";
+        $sql = $sql = "select distinct models from CarInfo;";
         $result = mysqli_query($conn, $sql);
-        echo "<h3>The unique thicknesses</h3>";
+        echo "<h3>All the Models Selected</h3>";
             foreach($result as $row) 
             {
-                echo "<p>{$row['thick']}</p>\n";
+                echo "<p>{$row['models']}</p>\n";
             }
                 
         $sql = $sql = "select count(*) from CarInfo;";
