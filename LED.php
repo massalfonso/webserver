@@ -1,13 +1,13 @@
-<?php
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LED Control</title>
+    <title>Raspberry Pi LED Control</title>
 </head>
 <body>
+    <h2>Control LED</h2>
     <form method="post" action="LED.php">
         <label>
-            <input type="radio" name="led" value="on"> Turn LED On
+            <input type="radio" name="led" value="on" required> Turn LED On
         </label>
         <label>
             <input type="radio" name="led" value="off"> Turn LED Off
@@ -21,22 +21,13 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['led'])) {
         $led = $_POST['led'];
-        // Example output (replace with actual GPIO control as needed)
+        $output = "";
         if ($led === 'on') {
-            echo "<p>LED is now ON.</p>";
-            // shell_exec("gpio write 0 1");
+            $output = shell_exec('gpio write 25 1');
+            echo "<p>LED on pin 25 is now <strong>ON</strong>.</p>";
         } elseif ($led === 'off') {
-            echo "<p>LED is now OFF.</p>";
-            // shell_exec("gpio write 0 0");
-        } elseif ($led === 'blink') {
-            echo "<p>LED is BLINKING.</p>";
-            // Example blink logic (pseudo-code, replace with actual implementation)
-            // for ($i = 0; $i < 5; $i++) {
-            //     shell_exec("gpio write 0 1");
-            //     usleep(500000); // 0.5 second
-            //     shell_exec("gpio write 0 0");
-            //     usleep(500000);
-            // }
+            $output = shell_exec('gpio write 25 0');
+            echo "<p>LED on pin 25 is now <strong>OFF</strong>.</p>";
         }
     }
     ?>
