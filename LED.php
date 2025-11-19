@@ -90,6 +90,10 @@
                 $output = shell_exec('gpio write 25 0');
                 echo "<div class='result'>LED on pin 25 is now <strong>OFF</strong>.</div>";
             }
+            elseif ($led === 'off') {
+                $output = shell_exec('gpio blink 25');
+                echo "<div class='result'>LED on pin 25 is now <strong>OFF</strong>.</div>";
+            }
         }
         ?>
     </div>
