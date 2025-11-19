@@ -56,7 +56,7 @@
         </form>
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['read'])) {
-            $raw = `./home/alfmas/WiringPi/raspberry-pi-bme280/bme280`;
+            $raw = `./bme280`;
             $deserialized = json_decode($raw, true);
             if ($deserialized) {
                 echo "<div class='reading'>Temperature: <strong>" . htmlspecialchars($deserialized["temperature"]) . " °C</strong></div>";
