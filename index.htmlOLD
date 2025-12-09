@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            BMW E46 Turbo Build
+        </title>
+        <!-- Google Fonts for cool title -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Segoe UI', Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                position: relative;
+                overflow-x: hidden;
+                background: 
+                    url('IMG/bmw-logo.png') 10% 10%/120px 120px no-repeat,
+                    url('IMG/turbo.png') 80% 80%/140px 140px no-repeat,
+                    url('IMG/tire.png') 50% 50%/100px 100px no-repeat,
+                    linear-gradient(135deg, #eaf6ff 0%, #d0e6fa 100%);
+                background-blend-mode: lighten;
+            }
+            body::before, body::after {
+                content: "";
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                pointer-events: none;
+                z-index: 0;
+            }
+            body::before {
+                background: 
+                    url('IMG/bmw-logo.png') 5% 10%/40px 40px no-repeat,
+                    url('IMG/tire.png') 80% 20%/32px 32px no-repeat,
+                    url('IMG/turbo.png') 60% 80%/36px 36px no-repeat,
+                    url('IMG/bmw-logo.png') 90% 70%/28px 28px no-repeat,
+                    url('IMG/tire.png') 20% 85%/24px 24px no-repeat;
+                opacity: 0.10;
+            }
+            body::after {
+                background: 
+                    url('IMG/turbo.png') 15% 60%/28px 28px no-repeat,
+                    url('IMG/bmw-logo.png') 70% 40%/32px 32px no-repeat;
+                opacity: 0.08;
+            }
+            h1, h2, h3, h4 {
+                font-family: 'Orbitron', Arial, sans-serif;
+                color: #222;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+                text-shadow: 0 0 18px #fff, 0 0 32px #fff;
+                border-radius: 8px;
+                padding: 8px 0;
+                margin-bottom: 16px;
+                box-shadow: 0 0 18px 2px #fff8, 0 2px 8px #0002;
+                border: 2px solid #e0e6ef;
+                background: rgba(255,255,255,0.15);
+            }
+            h1 {
+                font-size: 3em;
+                letter-spacing: 2px;
+                margin-top: 30px;
+                transition: text-shadow 0.3s, color 0.3s, box-shadow 0.3s;
+            }
+            h1:hover {
+                color: #0055a5;
+                text-shadow: 0 0 32px #fff, 0 0 64px #fff;
+                box-shadow: 0 0 40px 10px #fff, 0 2px 16px #0055a544;
+                cursor: pointer;
+            }
+            h2 {
+                font-size: 1.7em;
+                border: 2px solid #e0e6ef;
+                background: rgba(255,255,255,0.18);
+                box-shadow: 0 0 12px #fff8, 0 2px 8px #0001;
+            }
+            h3 {
+                font-size: 1.3em;
+                border: 2px solid #e0e6ef;
+                background: rgba(255,255,255,0.18);
+                box-shadow: 0 0 12px #fff8, 0 2px 8px #0001;
+            }
+            h4 {
+                font-size: 1.2em;
+                border: 2px solid #e0e6ef;
+                background: rgba(255,255,255,0.18);
+                box-shadow: 0 0 12px #fff8, 0 2px 8px #0001;
+            }
+            div {
+                background: #fff;
+                margin: 32px auto;
+                padding: 28px 24px;
+                max-width: 800px;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px 0 #0002, 0 0 0 2px #e0e6ef;
+                border: 2px solid #e0e6ef;
+                position: relative;
+                z-index: 1;
+            }
+            img {
+                display: block;
+                margin: 24px auto;
+                max-width: 90%;
+                border-radius: 10px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.12), 0 0 0 4px #fff;
+                position: relative;
+                z-index: 1;
+            }
+            ul {
+                padding-left: 24px;
+            }
+            li {
+                margin-bottom: 8px;
+                font-size: 1em;
+            }
+            a {
+                color: #0055a5;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            input[type="number"], input[type="email"], input[type="range"] {
+                padding: 8px;
+                border-radius: 6px;
+                border: 2px solid #e0e6ef;
+                box-shadow: 0 2px 8px #0001;
+                font-size: 1em;
+                margin-bottom: 10px;
+                width: 180px;
+                background: #f7f7f7;
+            }
+            input[type="submit"] {
+                padding: 8px 18px;
+                border-radius: 6px;
+                border: 2px solid #e0e6ef;
+                background: #0055a5;
+                color: #fff;
+                font-family: 'Orbitron', Arial, sans-serif;
+                font-size: 1em;
+                cursor: pointer;
+                box-shadow: 0 2px 8px #0002;
+                transition: background 0.2s;
+            }
+            input[type="submit"]:hover {
+                background: #003366;
+            }
+            label {
+                font-weight: bold;
+                margin-right: 8px;
+            }
+            form {
+                margin-bottom: 10px;
+            }
+        </style>
+
+        <script>
+        function ShowBuildUpdate() 
+            {
+                alert("Discovered the hard way that the new AEM fuel pump we bought has too high of a flow and will cause issues with the slower OEM fuel filter, now were going to need to find a fuel pump with a smaller LPH (Litres Per Hour) rating or also upgrade the fuel filter");
+            }
+
+        function ChangeText()
+            {
+                document.getElementById("Change").innerHTML = "Then you are on the wrong page BOZO";
+            }
+        
+        function Hide() 
+        {
+            var x = document.getElementById("hidden");
+         if (x.style.display === "none") 
+            {
+                x.style.display = "block";
+            } 
+        else 
+            {
+                x.style.display = "none";
+            }
+        }
+
+        function IMGChange() 
+        {
+            document.getElementById("IMG1").src = "IMG/BW.Logo.png";
+        }
+        </script>
+
+    </head>
+
+    <body>
+        <h1>
+            <u>BMW E46 Turbo Build</u>
+        </h1>
+
+        <img src="IMG/E46.Picture.jpg"/>
+
+        <div>
+            <button onclick="ShowBuildUpdate()"> Latest Build Updates </button>
+        </div>
+
+        <a href="LED.php">Go to LED Control Page</a>
+        <a href="Sensor.php">View Sensor Readings</a>
+
+        <div>
+            <h3>
+                Enter Your Car's Information
+            </h3>
+            <p>
+                Enter Your Car's Year:
+            </p>
+            <form action="response.php" method="post">
+                <input type="number" name="year" required min="1900" max="2025" placeholder="Year">
+
+        
+            <button onclick="ChangeText()"> Press If Your Car Isn't Displayed Below </button>
+
+            <p id ="Change">
+                Select Your Car Model:
+            </p>
+                <input type="radio" id="323i" name="models" value="323i">
+                <label for="323i">323i</label><br>
+                <input type="radio" id="325i" name="models" value="325i">
+                <label for="325i">325i</label><br>          
+                <input type="radio" id="328i" name="models" value="328i">
+                <label for="328i">328i</label><br>           
+                <input type="radio" id="330i" name="models" value="330i">
+                <label for="330i">330i</label><br>
+                <input type="radio" id="323ci" name="models" value="323ci">
+                <label for="323ci">323ci</label><br>
+                <input type="radio" id="325ci" name="models" value="325ci">
+                <label for="325ci">325ci</label><br>
+                <input type="radio" id="328ci" name="models" value="328ci">
+                <label for="328ci">328ci</label><br>
+                <input type="radio" id="330ci" name="models" value="330ci">
+                <label for="330ci">330ci</label><br>
+                <input type="radio" id="M3" name="models" value="M3">            
+                <label for="M3">M3</label><br>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div>
+            <h2>
+                Backround Information: 
+            </h2>
+            <p>
+                The BMW E46 is the fourth generation of the BMW 3 Series, which was produced from 1998 to 2006. 
+                It is widely regarded as one of the best-handling and most well-rounded cars in its class, 
+                offering a balance of performance, comfort, and practicality. The E46 was available in various body styles, 
+                including sedan, coupe, convertible, and wagon, and it came with a range of engine options, including inline-four and inline-six engines.
+                The M54 engine is a straight-six petrol engine that was produced by BMW from 2000 to 2006. 
+                It was used in various BMW models, including the E46 3 Series, E39 5 Series, and Z4 roadster. 
+                The M54 engine is known for its smooth power delivery, high-revving nature, and reliability. 
+                It features double VANOS (variable valve timing) on both the intake and exhaust camshafts, which helps improve performance and fuel efficiency.
+                The ZF5 transmission is a five-speed manual transmission that was used in various BMW models, including the E46 3 Series. 
+                It is known for its smooth shifting and durability. The ZF5 transmission features a close-ratio gearset, which helps improve acceleration and overall performance.
+            </p>
+        </div>
+        
+        <div>
+            <h2>
+                Project Goal: 
+            </h2>
+            <p>
+                The car I will be using is a 2004 330ci, the main goal of this project is to implement a forced induction system to increase 
+                the overall power and torque. 
+                This will mainly be accomplshed by modifying its original engine (M54) and Transmission (ZF5).
+                Other systems will also need to e modified to support this increased power and different intake and exhaust systems
+                The forced induction will be provided by a turbocharger increasing the air being fed into the engines intake.
+                Turbo's not only help make significant horsepower and torque gains but also improve engine efficiency. 
+                The turbocharger is the best value oriented forced induction method as its price to performance ratio is unmacthed. 
+                Im aiming to make anywhere from 400-450 whp (wheel horsepower) reliably with this build and have minimal turbo lag.
+                That is the sweetspot for it to be able to be street or track driven without making significant compromises.
+            </p>
+        </div>
+
+        <button onclick="Hide()">Click To Hide The Tools List</button>
+
+        <div id = hidden>
+            <h2>
+                Required Tools:
+            </h2>
+            <ul>
+                <li>(1.) Metric Socket Set</li>
+                <li>(2.) Metric Wrenches</li>
+                <li>(3.) Screwdrivers</li>
+                <li>(4.) Linemans Pliers</li>
+                <li>(5.) Needle Nose Pliers</li>
+                <li>(6.) Wire Cutters</li>
+                <li>(5.) Digital Torque Wrench</li>
+                <li>(6.) Jack + Jack Stands</li>
+                <li>(7.) Engine Crane + Stand</li>
+                <li>(8.) Drill and Drill Bits</li>
+                <li>(9.) Grinder</li>
+                <li>(10.) Welder</li>
+                <li>(11.) Digital Multimeter</li>
+                <li>(12.) Timing Kit</li>
+                <li>(13.) Pry Bars</li>
+                <li>(14.) Torx Bits</li>
+                <li>(15.) E-Torx Sockets</li>
+                <li>(16.) Pick Set</li>
+                <li>(17.) Deadblow Hammer</li>
+                <li>(18.) Funnel</li>
+                <li>(19.) Oil Drain Pan</li>
+                <li>(20.) Rags</li>
+                <li>(21.) RTV Silicone</li>
+                <li>(22.) Thread Locker</li>
+                <li>(23.) Anti-Seize Compound</li>
+                <li>(24.) Breaker Bar</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h2>
+                Recommended Upgrades:
+            </h2>
+        </div>
+
+        <div>
+            <h2>
+                Required Components:
+            </h2>
+        </div>
+
+        <div>
+            <h4>
+                Additional Resources:
+                <a href = "https://www.e46fanatics.com"> E46 Fanatics Forum</a>
+            </h4>
+        </div>
+
+        <div>
+            <h3>How Helpful was this page?</h3>
+            <form action="slidecontainer">
+                <input type="range" min="1" max="100" value="50">
+            </form>
+        </div>
+
+        <div>
+            <h3>Get Exclusive Tips</h3>
+            <form>      
+                <label for="email">Enter your email to recieve tips and exclusive build Information:</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <div>
+        <button onclick="IMGChange()">Click For Logo Change</button>
+
+        <img id=IMG1 src="IMG/BB.Logo.jpg"/>
+        </div>
+    </body>
+</html>
