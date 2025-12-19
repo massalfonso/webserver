@@ -5,7 +5,7 @@
         <?php $Search = $_POST["search"]; ?><br>
 
         <?php
-        $servername ="PIzza";
+        $servername ="localhost";
         $username = "root";
         $password = "Lego0810";
         $dbname = "HackerInfo";
