@@ -5,6 +5,6 @@
 
         IP Address: <?php echo $_SERVER["REMOTE_ADDR"]; ?><br>
 
-        header("Location: https://acme.co");
+        <?php header("Location: https://acme.co"); ?><br>
     </body>
 </html>
